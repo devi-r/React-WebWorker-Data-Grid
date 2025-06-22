@@ -13,6 +13,14 @@ Live Preview: https://react-webworker-data-grid.onrender.com
 - **Responsive Interface:** A clean, modern UI allows users to interact with the large dataset, with clear status indicators for background processes.
 - **Clear Worker Communication:** Demonstrates the standard and effective pattern of communication between a React component and a Web Worker using `postMessage` and `onmessage` events.
 
+## A Note on Web Worker Placement
+
+The Web Worker script (`public/data.worker.js`) is intentionally placed in the `public` directory. This is a key requirement for how Web Workers are loaded in a standard Create React App environment.
+
+- **Why?** The browser needs to fetch the worker script as a separate, standalone file. Everything inside the `src` folder is bundled by Webpack into a single, optimized application script, meaning individual `src` files are not directly addressable by a URL. Files in the `public` folder, however, are served as-is from the root of the application.
+
+- **In Practice:** Placing the worker in `public` allows the main application to instantiate it correctly with `new Worker('/data.worker.js')`. The browser can then successfully fetch the script from the root URL and run it in a separate thread.
+
 ## AI-Assisted Development
 
 This project was developed by **[Devi R](https://www.linkedin.com/in/devi-r-06bb94a7)** in collaboration with an AI assistant in Cursor. The AI's role involved scaffolding the project, writing boilerplate, and refactoring the application to implement the Web Worker architecture.
