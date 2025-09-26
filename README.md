@@ -23,7 +23,7 @@ The Web Worker script (`public/data.worker.js`) is intentionally placed in the `
 
 ## AI-Assisted Development
 
-This project was developed by **[Devi R](https://www.linkedin.com/in/devi-r-06bb94a7)** in collaboration with an AI assistant in Cursor. The AI's role involved scaffolding the project, writing boilerplate, and refactoring the application to implement the Web Worker architecture.
+This project was developed by **[Devi R](https://www.linkedin.com/in/devi-r-06bb94a7)** in collaboration with an AI assistant in Cursor.
 
 ---
 
